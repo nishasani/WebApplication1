@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>
+            Client Details
+        </h2>
+
+
+        <table class="table table-bordered table-responsive table-hover">
+            <tr>
+                <th>Client Id </th>
+                <th>Client Name </th>
+                <th>Gender </th>
+                <th>Address</th>
+                <th>Mob.No</th>
+            </tr>
+            @foreach (var d in @ViewBag.ClientList)
+            {
+                <tr>
+                    <td>@d.Clientid</td>
+                    <td>@d.ClientName</td>
+
+                    @if (@d.Gender == false)
+                    {
+                        <td>Male</td>
+                    }
+
+                    @if (@d.Gender == true)
+                    {
+                        <td>Female</td>
+                    }
+                    <td>@d.Address</td>
+                    <td>@d.mobilenumber</td>
+
+                </tr>
+
+            }
+        </table>
+
+        <table class="table table-bordered table-responsive table-hover">
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Age
+                </th>
+                <th>
+                    DOB
+                </th>
+            </tr>
+
+            @foreach (var itm in @ViewBag.ClientList)
+            {
+        <tr>
+            <td>
+                @itm.ClientName
+            </td>
+            <td>
+                @itm.Clientid
+            </td>
+            <td>
+                01/01/2020
+            </td>
+        </tr>
+                    }
+               
+            </table>
+
+    </div>
+
+</div>
